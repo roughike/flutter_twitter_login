@@ -38,8 +38,8 @@ class TwitterLogin {
 
   /// Retrieves the currently active session, if any.
   ///
-  /// This could be useful for logging in the user automatically in the case
-  /// where you don't persist the session in your Flutter app yourself.
+  /// A common use case for this is logging the user automatically in if they
+  /// have already logged in before and the session is still active.
   ///
   /// For example:
   ///
@@ -193,8 +193,7 @@ class TwitterSession {
 
   /// Constructs a new access token instance from a [Map].
   ///
-  /// This is used mostly internally by this library, but could be useful if
-  /// storing the token locally by using the [toMap] method.
+  /// This is used mostly internally by this library.
   TwitterSession.fromMap(Map<String, dynamic> map)
       : secret = map['secret'],
         token = map['token'],
@@ -204,7 +203,7 @@ class TwitterSession {
   /// Transforms this access token to a [Map].
   ///
   /// This could be useful for encoding this access token as JSON and then
-  /// storing it locally.
+  /// sending it to a server.
   Map<String, dynamic> toMap() {
     return {
       'secret': secret,
