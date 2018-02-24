@@ -1,7 +1,7 @@
 # flutter_twitter_login
 
 [![pub package](https://img.shields.io/pub/v/flutter_twitter_login.svg)](https://pub.dartlang.org/packages/flutter_twitter_login)
- [![Build Status](https://travis-ci.org/roughike/flutter_twitter_login.svg?branch=master)](https://travis-ci.org/roughike/flutter_twitter_login) 
+ [![Build Status](https://travis-ci.org/roughike/flutter_twitter_login.svg?branch=master)](https://travis-ci.org/roughike/flutter_twitter_login)
  [![Coverage Status](https://coveralls.io/repos/github/roughike/flutter_twitter_login/badge.svg)](https://coveralls.io/github/roughike/flutter_twitter_login)
 
 A Flutter plugin for using the native TwitterKit SDKs on Android and iOS.
