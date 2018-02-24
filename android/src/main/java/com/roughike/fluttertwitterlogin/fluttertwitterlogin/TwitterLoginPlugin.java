@@ -54,7 +54,7 @@ public class TwitterLoginPlugin extends Callback<TwitterSession> implements Meth
                 authorize(result, call);
                 break;
             case METHOD_LOG_OUT:
-                logOut(result);
+                logOut(result, call);
                 break;
             default:
                 result.notImplemented();
@@ -109,10 +109,12 @@ public class TwitterLoginPlugin extends Callback<TwitterSession> implements Meth
         return new TwitterAuthClient();
     }
 
-    private void logOut(Result result) {
+    private void logOut(Result result, MethodCall call) {
         CookieSyncManager.createInstance(registrar.context());
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.removeSessionCookie();
+
+        initializeAuthClient(call);
         TwitterCore.getInstance().getSessionManager().clearActiveSession();
         result.success(null);
     }
@@ -163,6 +165,6 @@ public class TwitterLoginPlugin extends Callback<TwitterSession> implements Meth
             authClientInstance.onActivityResult(requestCode, resultCode, data);
         }
 
-        return true;
+        return false;
     }
 }
