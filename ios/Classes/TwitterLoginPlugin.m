@@ -60,9 +60,9 @@
       }];
 }
 
-- (NSDictionary *)sessionDataToMap:(TWTRSession *)session {
+- (id)sessionDataToMap:(TWTRSession *)session {
   if (session == nil) {
-    return nil;
+    return [NSNull null];
   }
 
   return @{
