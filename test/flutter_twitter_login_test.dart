@@ -165,6 +165,19 @@ void main() {
       expect(result.status, TwitterLoginStatus.error);
     });
 
+    test('logout', () async {
+      setMethodCallResponse(null);
+
+      await sut.logOut();
+
+      expect(log, [
+        isMethodCall(
+          'logOut',
+          arguments: kTokenAndSecretArguments,
+        )
+      ]);
+    });
+
     test('access token equality test', () {
       final TwitterSession first = new TwitterSession.fromMap(kSessionMap);
       final TwitterSession second = new TwitterSession.fromMap(kSessionMap);

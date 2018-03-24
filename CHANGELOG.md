@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Dart 2 support! There should not be any breaking changes. Please do file issues if you have problems.
+
 ## 1.0.1
 
 * Fixed `onActivityResult` override that was potentially preventing other plugins from receiving `Activity` results.

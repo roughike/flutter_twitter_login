@@ -8,6 +8,11 @@ A Flutter plugin for using the native TwitterKit SDKs on Android and iOS.
 
 This plugin uses [the new Gradle 4.1 and Android Studio 3.0 project setup](https://github.com/flutter/flutter/wiki/Updating-Flutter-projects-to-Gradle-4.1-and-Android-Studio-Gradle-plugin-3.0.1).
 
+## Dart support
+
+* Dart 1: 1.0.x.
+* Dart 2: 1.1.0 and up.
+
 ## Installation
 
 See the [installation instructions on pub](https://pub.dartlang.org/packages/flutter_twitter_login#-installing-tab-). No platform-specific configuration is needed!
