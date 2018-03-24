@@ -55,14 +55,14 @@ class TwitterLogin {
   ///
   /// If the user is not logged in, this returns null.
   Future<TwitterSession> get currentSession async {
-    final Map<String, dynamic> session =
+    final Map<dynamic, dynamic> session =
         await channel.invokeMethod('getCurrentSession', _keys);
 
     if (session == null) {
       return null;
     }
 
-    return new TwitterSession.fromMap(session);
+    return new TwitterSession.fromMap(session.cast<String, dynamic>());
   }
 
   /// Logs the user in.
@@ -101,14 +101,14 @@ class TwitterLogin {
   ///
   /// See the [TwitterLoginResult] class for more documentation.
   Future<TwitterLoginResult> authorize() async {
-    final Map<String, dynamic> result =
+    final Map<dynamic, dynamic> result =
         await channel.invokeMethod('authorize', _keys);
 
-    return new TwitterLoginResult._(result);
+    return new TwitterLoginResult._(result.cast<String, dynamic>());
   }
 
   /// Logs the currently logged in user out.
-  Future<Null> logOut() async => channel.invokeMethod('logOut', _keys);
+  Future<void> logOut() async => channel.invokeMethod('logOut', _keys);
 }
 
 /// The result when a Twitter login flow has completed.
@@ -136,7 +136,9 @@ class TwitterLoginResult {
   TwitterLoginResult._(Map<String, dynamic> map)
       : status = _parseStatus(map['status'], map['errorMessage']),
         session = map['session'] != null
-            ? new TwitterSession.fromMap(map['session'])
+            ? new TwitterSession.fromMap(
+                map['session'].cast<String, dynamic>(),
+              )
             : null,
         errorMessage = map['errorMessage'];
 
