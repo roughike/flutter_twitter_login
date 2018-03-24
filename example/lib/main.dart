@@ -17,6 +17,35 @@ class _MyAppState extends State<MyApp> {
 
   String _message = 'Logged out.';
 
+  void _login() async {
+    final TwitterLoginResult result = await twitterLogin.authorize();
+    String newMessage;
+
+    switch (result.status) {
+      case TwitterLoginStatus.loggedIn:
+        newMessage = 'Logged in! username: ${result.session.username}';
+        break;
+      case TwitterLoginStatus.cancelledByUser:
+        newMessage = 'Login cancelled by user.';
+        break;
+      case TwitterLoginStatus.error:
+        newMessage = 'Login error: ${result.errorMessage}';
+        break;
+    }
+
+    setState(() {
+      _message = newMessage;
+    });
+  }
+
+  void _logout() async {
+    await twitterLogin.logOut();
+
+    setState(() {
+      _message = 'Logged out.';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -31,28 +60,11 @@ class _MyAppState extends State<MyApp> {
               new Text(_message),
               new RaisedButton(
                 child: new Text('Log in'),
-                onPressed: () async {
-                  final TwitterLoginResult result =
-                      await twitterLogin.authorize();
-                  String newMessage;
-
-                  switch (result.status) {
-                    case TwitterLoginStatus.loggedIn:
-                      newMessage =
-                          'Logged in! username: ${result.session.username}';
-                      break;
-                    case TwitterLoginStatus.cancelledByUser:
-                      newMessage = 'Login cancelled by user.';
-                      break;
-                    case TwitterLoginStatus.error:
-                      newMessage = 'Login error: ${result.errorMessage}';
-                      break;
-                  }
-
-                  setState(() {
-                    _message = newMessage;
-                  });
-                },
+                onPressed: _login,
+              ),
+              new RaisedButton(
+                child: new Text('Log out'),
+                onPressed: _logout,
               ),
             ],
           ),
