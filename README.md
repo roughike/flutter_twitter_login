@@ -22,7 +22,12 @@ It is important to configure the callback URLs so that everything works correctl
 You will have to use the following callback URLs:
 
 Android - twittersdk: //
+
 iOS - twitterkit-CONSUMERKEY: //
+
+FOR MORE INFORMATION READ:
+https://developer.twitter.com/en/docs/basics/developer-portal/guides/callback-urls.html
+
 
 
 ## Installation
