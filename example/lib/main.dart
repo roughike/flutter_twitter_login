@@ -11,8 +11,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   static final TwitterLogin twitterLogin = new TwitterLogin(
-    consumerKey: 'kkOvaF1Mowy4JTvCxKTV5O1WF',
-    consumerSecret: 'ZECGsI6UUDBEUVGkJe4S5vd0FGqGxC3wMJCgsXgPRfjSwRFnyH',
+    consumerKey: 'Ck2VbYUAMuPiES7OwULwfKbLE',
+    consumerSecret: 'UlHLROt3RZCB1Calrb1UEujfApi1EIWamG5KAe3frLnzYJMity',
   );
 
   String _message = 'Logged out.';
