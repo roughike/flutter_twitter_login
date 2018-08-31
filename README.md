@@ -13,6 +13,23 @@ This plugin uses [the new Gradle 4.1 and Android Studio 3.0 project setup](https
 * Dart 1: 1.0.x.
 * Dart 2: 1.1.0 and up.
 
+## before instalation
+
+Before you begin it is important to properly configure your application at https://apps.twitter.com/
+
+It is important to configure the callback URLs so that everything works correctly in your application.
+
+You will have to use the following callback URLs:
+
+Android - twittersdk: //
+
+iOS - twitterkit-CONSUMERKEY: //
+
+FOR MORE INFORMATION READ:
+https://developer.twitter.com/en/docs/basics/developer-portal/guides/callback-urls.html
+
+
+
 ## Installation
 
 See the [installation instructions on pub](https://pub.dartlang.org/packages/flutter_twitter_login#-installing-tab-). No platform-specific configuration is needed!
