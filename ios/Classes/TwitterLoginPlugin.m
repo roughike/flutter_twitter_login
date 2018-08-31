@@ -1,5 +1,5 @@
 #import "TwitterLoginPlugin.h"
-#import <TwitterKit/TwitterKit.h>
+#import "../../example/ios/Pods/TwitterKit/iOS/TwitterKit.framework/Headers/TWTRKit.h"
 
 @implementation TwitterLoginPlugin
 
