@@ -28,38 +28,10 @@ iOS - twitterkit-CONSUMERKEY: //
 FOR MORE INFORMATION READ:
 https://developer.twitter.com/en/docs/basics/developer-portal/guides/callback-urls.html
 
+[Complete Guide on ](https://github.com/twitter/twitter-kit-ios/wiki/Installation)
 
-## IOS SETUP 
-Make sure to import the framework header: #import <TwitterKit/TWTRKit.h>
 
-If using Swift you will need to add it to your Objective-C bridging header
 
-Inside your App Delegate, initialize Twitter Kit with your application key and secret (paste your own key and secret).
-
-```
-// Objective C
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-{
-    [[Twitter sharedInstance] startWithConsumerKey:@"hTpkPVU4pThkM0" consumerSecret:@"ovEqziMzLpUOF163Qg2mj"];
-}
-
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *, id> *)options
-{
-    return [[Twitter sharedInstance] application:app openURL:url options:options];
-}
-```
-
-```
-// Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    TWTRTwitter.sharedInstance().start(withConsumerKey:"hTpkPVU4pThkM0", consumerSecret:"ovEqziMzLpUOF163Qg2mj")
-    return true
-}
-
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
-}
-```
 
 ### Configure Info.Plist
 Twitter Kit looks for a URL scheme in the format twitterkit-<consumerKey>, where consumerKey is your application's Twitter API key, e.g. twitterkit-dwLf79lNQfsJ.
@@ -85,29 +57,6 @@ In your app's Info.plist, add URL Schemes by adding code below after <dict>
     <string>twitterauth</string>
 </array>
 ```
-
-[Complete Guide on ](https://github.com/twitter/twitter-kit-ios/wiki/Installation)
-
-
-
-## SETUP YOUR PODFILE
-Change your podfile 
-```
-pre_install do |installer|
-# workaround for CocoaPods/CocoaPods#3289
-Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
-      config.build_settings['SWIFT_VERSION'] = '4.1' # <--- add this
-    end
-  end
-end
-```
-
 
 
 
