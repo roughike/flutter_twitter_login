@@ -38,7 +38,7 @@ switch (result.status) {
     _showCancelMessage();
     break;
   case TwitterLoginStatus.error:
-    _showErrorMessage(result.error);
+    _showErrorMessage(result.errorMessage);
     break;
 }
 ```
