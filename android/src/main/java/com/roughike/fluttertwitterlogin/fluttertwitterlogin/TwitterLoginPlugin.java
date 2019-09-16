@@ -23,7 +23,7 @@ import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 public class TwitterLoginPlugin extends Callback<TwitterSession> implements MethodCallHandler, PluginRegistry.ActivityResultListener {
-    private static final String CHANNEL_NAME = "com.roughike/flutter_twitter_login";
+    private static final String CHANNEL_NAME = "com.bodnarrr/flutter_twitter_ab";
     private static final String METHOD_GET_CURRENT_SESSION = "getCurrentSession";
     private static final String METHOD_AUTHORIZE = "authorize";
     private static final String METHOD_LOG_OUT = "logOut";

@@ -2,7 +2,7 @@
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
 Pod::Spec.new do |s|
-  s.name             = 'flutter_twitter_login'
+  s.name             = 'flutter_twitter_ab'
   s.version          = '0.0.1'
   s.summary          = 'A Flutter plugin for allowing users to authenticate with native Android &amp; iOS Twitter login SDKs.'
   s.description      = <<-DESC

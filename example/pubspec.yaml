@@ -1,5 +1,5 @@
-name: flutter_twitter_login_example
-description: Demonstrates how to use the flutter_twitter_login plugin.
+name: flutter_twitter_ab_example
+description: Demonstrates how to use the flutter_twitter_ab plugin.
 
 dependencies:
   flutter:
@@ -13,7 +13,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_twitter_login:
+  flutter_twitter_ab:
     path: ../
 
 # For information on the generic Dart part of this file, see the
