@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_twitter_login/flutter_twitter_login.dart';
+import 'package:flutter_twitter_ab/flutter_twitter_login.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

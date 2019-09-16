@@ -1,3 +1,8 @@
+## 1.1.1
+
+* Fixed problem with building iOS project: `s.static_framework = true` set in .podspec file.
+
+
 ## 1.1.0
 
 * Dart 2 support! There should not be any breaking changes. Please do file issues if you have problems.
