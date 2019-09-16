@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 /// login SDKs on Android & iOS.
 class TwitterLogin {
   static const MethodChannel channel =
-      const MethodChannel('com.roughike/flutter_twitter_login');
+      const MethodChannel('com.bodnarrr/flutter_twitter_ab');
 
   /// Creates a new Twitter login instance, with the specified key and secret.
   ///

@@ -23,9 +23,9 @@
       <excludeFolder url="file://$MODULE_DIR$/example/android/.idea/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/roughike/fluttertwitterlogin/fluttertwitterloginexample/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/roughike/fluttertwitterlogin/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/roughike/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/bodnarrr/fluttertwitterab/fluttertwitterabexample/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/bodnarrr/fluttertwitterab/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/bodnarrr/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/flutter/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/flutter/plugins/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/packages" />
@@ -58,7 +58,7 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Fabric/iOS/Fabric.framework/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Fabric/iOS/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Fabric/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Private/flutter_twitter_login/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Private/flutter_twitter_ab/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Private/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/Fabric/Fabric/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/Fabric/packages" />
@@ -68,7 +68,7 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/TwitterCore/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/TwitterKit/TwitterKit/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/TwitterKit/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/flutter_twitter_login/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/flutter_twitter_ab/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/Public/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Headers/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Local Podspecs/packages" />
@@ -77,7 +77,7 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Pods.xcodeproj/xcuserdata/ironman.xcuserdatad/xcschemes/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Pods.xcodeproj/xcuserdata/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/Pods-Runner/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/flutter_twitter_login/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/flutter_twitter_ab/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/Target Support Files/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/TwitterCore/iOS/TwitterCore.framework/Headers/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Pods/TwitterCore/iOS/TwitterCore.framework/Modules/packages" />

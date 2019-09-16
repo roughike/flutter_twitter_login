@@ -451,7 +451,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.roughike.fluttertwitterlogin.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bodnarrr.fluttertwitterab.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -474,7 +474,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.roughike.fluttertwitterlogin.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bodnarrr.fluttertwitterab.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -1,4 +1,4 @@
-group 'com.roughike.fluttertwitterlogin.fluttertwitterlogin'
+group 'com.bodnarrr.fluttertwitterab.fluttertwitterab'
 version '1.0-SNAPSHOT'
 
 buildscript {
