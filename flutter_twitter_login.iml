@@ -23,9 +23,9 @@
       <excludeFolder url="file://$MODULE_DIR$/example/android/.idea/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/roughike/fluttertwitterlogin/fluttertwitterloginexample/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/roughike/fluttertwitterlogin/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/roughike/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/bodnarrr/fluttertwitterab/fluttertwitterabexample/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/bodnarrr/fluttertwitterab/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/com/bodnarrr/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/flutter/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/flutter/plugins/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/packages" />

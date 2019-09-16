@@ -14,7 +14,7 @@ dev_dependencies:
 
 flutter:
   plugin:
-    androidPackage: com.bodnarrr.fluttertwitterlogin.fluttertwitterlogin
+    androidPackage: com.bodnarrr.fluttertwitterab.fluttertwitterab
     pluginClass: TwitterLoginPlugin
 
 environment:

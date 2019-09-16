@@ -1,4 +1,4 @@
-package com.roughike.fluttertwitterlogin.fluttertwitterloginexample;
+package com.bodnarrr.fluttertwitterab.fluttertwitterabexample;
 
 import android.os.Bundle;
 

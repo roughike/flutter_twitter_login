@@ -1,4 +1,4 @@
-package com.roughike.fluttertwitterlogin.fluttertwitterlogin;
+package com.bodnarrr.fluttertwitterab.fluttertwitterab;
 
 import android.content.Intent;
 import android.webkit.CookieManager;
