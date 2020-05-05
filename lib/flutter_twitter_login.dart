@@ -100,16 +100,9 @@ class TwitterLogin {
   ///
   /// See the [TwitterLoginResult] class for more documentation.
   Future<TwitterLoginResult> authorize() async {
-    print("before");
-    try {
-      final Map<dynamic, dynamic> result =
-          await channel.invokeMethod('authorize', _keys);
-      print("after");
-      return new TwitterLoginResult._(result.cast<String, dynamic>());
-    } catch (e) {
-      print(e);
-      return null;
-    }
+    final Map<dynamic, dynamic> result =
+        await channel.invokeMethod('authorize', _keys);
+    return new TwitterLoginResult._(result.cast<String, dynamic>());
   }
 
   /// Logs the currently logged in user out.
