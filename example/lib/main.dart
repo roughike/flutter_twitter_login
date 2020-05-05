@@ -18,24 +18,27 @@ class _MyAppState extends State<MyApp> {
   String _message = 'Logged out.';
 
   void _login() async {
-    final TwitterLoginResult result = await twitterLogin.authorize();
-    String newMessage;
+    try {
+      final TwitterLoginResult result = await twitterLogin.authorize();
+      String newMessage;
 
-    switch (result.status) {
-      case TwitterLoginStatus.loggedIn:
-        newMessage = 'Logged in! username: ${result.session.username}';
-        break;
-      case TwitterLoginStatus.cancelledByUser:
-        newMessage = 'Login cancelled by user.';
-        break;
-      case TwitterLoginStatus.error:
-        newMessage = 'Login error: ${result.errorMessage}';
-        break;
+      switch (result.status) {
+        case TwitterLoginStatus.loggedIn:
+          newMessage = 'Logged in! username: ${result.session.username}';
+          break;
+        case TwitterLoginStatus.cancelledByUser:
+          newMessage = 'Login cancelled by user.';
+          break;
+        case TwitterLoginStatus.error:
+          newMessage = 'Login error: ${result.errorMessage}';
+          break;
+      }
+      setState(() {
+        _message = newMessage;
+      });
+    } catch (e) {
+      print(e);
     }
-
-    setState(() {
-      _message = newMessage;
-    });
   }
 
   void _logout() async {

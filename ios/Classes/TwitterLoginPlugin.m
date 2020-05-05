@@ -1,5 +1,5 @@
 #import "TwitterLoginPlugin.h"
-#import <TwitterKit/TwitterKit.h>
+#import <TwitterKit/TWTRKit.h>
 
 @implementation TwitterLoginPlugin
 
@@ -14,11 +14,13 @@
 
 - (void)handleMethodCall:(FlutterMethodCall *)call
                   result:(FlutterResult)result {
+  printf("HELLO TOTO");
   [self initializeTwitterInstance:call];
 
   if ([@"getCurrentSession" isEqualToString:call.method]) {
     [self getCurrentSession:result];
   } else if ([@"authorize" isEqualToString:call.method]) {
+    printf("HELLO TOTO");
     [self authorize:result];
   } else if ([@"logOut" isEqualToString:call.method]) {
     [self logOut:result];
@@ -44,6 +46,7 @@
 }
 
 - (void)authorize:(FlutterResult)result {
+  printf("HELLO");
   [[Twitter sharedInstance]
       logInWithCompletion:^(TWTRSession *session, NSError *error) {
         if (error == nil) {

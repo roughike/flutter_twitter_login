@@ -1,31 +1,33 @@
 PODS:
-  - Fabric (1.7.2)
   - Flutter (1.0.0)
   - flutter_twitter_login (0.0.1):
     - Flutter
-    - TwitterKit
-  - TwitterCore (2.8.0):
-    - Fabric
-  - TwitterKit (2.8.1):
-    - TwitterCore (>= 2.8)
+    - TwitterKit5
+  - TwitterCore (3.2.0)
+  - TwitterKit5 (5.1.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
-  - Flutter (from `/Users/ironman/flutter/bin/cache/artifacts/engine/ios`)
-  - flutter_twitter_login (from `/Users/ironman/FlutterProjects/flutter_twitter_login/ios`)
+  - Flutter (from `/Users/etiennetheodore/Documents/software/flutter/bin/cache/artifacts/engine/ios`)
+  - flutter_twitter_login (from `/Users/etiennetheodore/Documents/youfeel/packages/flutter_twitter_login/ios`)
+
+SPEC REPOS:
+  trunk:
+    - TwitterCore
+    - TwitterKit5
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: /Users/ironman/flutter/bin/cache/artifacts/engine/ios
+    :path: "/Users/etiennetheodore/Documents/software/flutter/bin/cache/artifacts/engine/ios"
   flutter_twitter_login:
-    :path: /Users/ironman/FlutterProjects/flutter_twitter_login/ios
+    :path: "/Users/etiennetheodore/Documents/youfeel/packages/flutter_twitter_login/ios"
 
 SPEC CHECKSUMS:
-  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
-  Flutter: d674e78c937094a75ac71dd77e921e840bea3dbf
-  flutter_twitter_login: acf71258bca3b35b6ac06681f7a33b48f4acc0bd
-  TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
-  TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_twitter_login: 11fd27d4428c4c8ed5d692f5f5370036935bee62
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit5: de28c7a3e022f18fd644e0bd61f9fca448991faa
 
 PODFILE CHECKSUM: c6c865faff84807a5d35de69eb2cdbdc36b99e15
 
-COCOAPODS: 1.3.0.beta.1
+COCOAPODS: 1.9.0
