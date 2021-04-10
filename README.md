@@ -15,7 +15,7 @@ This plugin uses [the new Gradle 4.1 and Android Studio 3.0 project setup](https
 
 ## Installation
 
-See the [installation instructions on pub](https://pub.dartlang.org/packages/flutter_twitter_login#-installing-tab-). No platform-specific configuration is needed!
+See the [installation instructions on pub](https://pub.dartlang.org/packages/flutter_twitter_login/install). No platform-specific configuration is needed!
 
 ## How do I use it?
 
