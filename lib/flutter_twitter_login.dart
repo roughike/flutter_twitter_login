@@ -126,7 +126,7 @@ class TwitterLoginResult {
 
   /// Only available when the [status] equals [TwitterLoginStatus.loggedIn],
   /// otherwise null.
-  final TwitterSession? session;
+  final TwitterSession session;
 
   /// Only available when the [status] equals [TwitterLoginStatus.error]
   /// otherwise null.
@@ -134,11 +134,13 @@ class TwitterLoginResult {
 
   TwitterLoginResult._(Map<String, dynamic> map)
       : status = _parseStatus(map['status'], map['errorMessage']),
-        session = map['session'] != null
-            ? new TwitterSession.fromMap(
-                map['session'].cast<String, dynamic>(),
-              )
-            : null,
+        session =
+            //  map['session'] != null
+            // ?
+            new TwitterSession.fromMap(
+          map['session'].cast<String, dynamic>(),
+        ),
+        // : null,
         errorMessage = map['errorMessage'];
 
   static TwitterLoginStatus _parseStatus(String status, String errorMessage) {
