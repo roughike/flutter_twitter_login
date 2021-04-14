@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/services.dart';
 
 /// A Flutter plugin for authenticating users by using the native Twitter
@@ -52,8 +54,13 @@ class TwitterLogin {
   ///
   /// If the user is not logged in, this returns null.
   Future<TwitterSession?> get currentSession async {
-    final Map<dynamic, dynamic> session =
+    final Map<dynamic, dynamic>? session =
         await channel.invokeMethod('getCurrentSession', _keys);
+
+    if (session == null) {
+      return null;
+    }
+
     return new TwitterSession.fromMap(session.cast<String, dynamic>());
   }
 
@@ -92,11 +99,15 @@ class TwitterLogin {
   /// ```
   ///
   /// See the [TwitterLoginResult] class for more documentation.
-  Future<TwitterLoginResult> authorize() async {
-    final Map<dynamic, dynamic> result =
+  Future<TwitterLoginResult?> authorize() async {
+    final Map<dynamic, dynamic>? result =
         await channel.invokeMethod('authorize', _keys);
-
-    return new TwitterLoginResult._(result.cast<String, dynamic>());
+    log("result");
+    print(result.toString());
+    if (result != null) {
+      return new TwitterLoginResult._(result.cast<String, dynamic>());
+    }
+    throw new StateError('Invalid status:');
   }
 
   /// Logs the currently logged in user out.
@@ -115,34 +126,37 @@ class TwitterLoginResult {
   /// This affects whether the [session] or [error] are available or not.
   /// If the user cancelled the login flow, both [session] and [errorMessage]
   /// are null.
-  final TwitterLoginStatus status;
+  final TwitterLoginStatus? status;
 
   /// Only available when the [status] equals [TwitterLoginStatus.loggedIn],
   /// otherwise null.
-  final TwitterSession session;
+  final TwitterSession? session;
 
   /// Only available when the [status] equals [TwitterLoginStatus.error]
   /// otherwise null.
-  final String errorMessage;
+  final String? errorMessage;
 
-  TwitterLoginResult._(Map<String, dynamic> map)
-      : status = _parseStatus(map['status'], map['errorMessage']),
-        session =
-            //  map['session'] != null
-            // ?
-            new TwitterSession.fromMap(
-          map['session'].cast<String, dynamic>(),
-        ),
-        // : null,
-        errorMessage = map['errorMessage'];
+  TwitterLoginResult._(Map<String, dynamic>? map)
+      : status = map != null
+            ? _parseStatus(map['status'], map['errorMessage'])
+            : null,
+        session = map?['session'] != null
+            ? TwitterSession.fromMap(
+                map?['session'].cast<String, dynamic>(),
+              )
+            : null,
+        errorMessage = map?['errorMessage'];
 
-  static TwitterLoginStatus _parseStatus(String status, String errorMessage) {
+  static TwitterLoginStatus _parseStatus(String? status, String? errorMessage) {
+    if (status == null) {
+      return TwitterLoginStatus.error;
+    }
     switch (status) {
       case 'loggedIn':
         return TwitterLoginStatus.loggedIn;
       case 'error':
         // Kind of a hack, but the only way of determining this.
-        if (errorMessage.contains('canceled') ||
+        if (errorMessage!.contains('canceled') ||
             errorMessage.contains('cancelled')) {
           return TwitterLoginStatus.cancelledByUser;
         }
