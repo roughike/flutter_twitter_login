@@ -145,6 +145,7 @@ class TwitterLoginResult {
             map?['errorMessage'] != null ? map!['errorMessage'] : null;
 
   static TwitterLoginStatus _parseStatus(String? status, String? errorMessage) {
+
     switch (status) {
       case 'loggedIn':
         return TwitterLoginStatus.loggedIn;
