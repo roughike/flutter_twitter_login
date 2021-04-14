@@ -56,11 +56,10 @@ class TwitterLogin {
     final Map<dynamic, dynamic>? session =
         await channel.invokeMethod('getCurrentSession', _keys);
 
-    if (session == null) {
-      return null;
+    if (session != null) {
+      return new TwitterSession.fromMap(session.cast<String, dynamic>());
     }
-
-    return new TwitterSession.fromMap(session.cast<String, dynamic>());
+    return null;
   }
 
   /// Logs the user in.
@@ -101,12 +100,10 @@ class TwitterLogin {
   Future<TwitterLoginResult?> authorize() async {
     final Map<dynamic, dynamic>? result =
         await channel.invokeMethod('authorize', _keys);
-    log("result");
-    print(result.toString());
     if (result != null) {
       return new TwitterLoginResult._(result.cast<String, dynamic>());
     }
-    throw new StateError('Invalid status:');
+    return null;
   }
 
   /// Logs the currently logged in user out.
@@ -144,12 +141,10 @@ class TwitterLoginResult {
                 map?['session'].cast<String, dynamic>(),
               )
             : null,
-        errorMessage = map?['errorMessage'];
+        errorMessage =
+            map?['errorMessage'] != null ? map!['errorMessage'] : null;
 
   static TwitterLoginStatus _parseStatus(String? status, String? errorMessage) {
-    if (status == null) {
-      return TwitterLoginStatus.error;
-    }
     switch (status) {
       case 'loggedIn':
         return TwitterLoginStatus.loggedIn;
