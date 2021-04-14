@@ -33,9 +33,9 @@ void main() {
     };
 
     final List<MethodCall> log = [];
-    TwitterLogin sut;
+    TwitterLogin sut = TwitterLogin(consumerKey: "", consumerSecret: "");
 
-    void setMethodCallResponse(Map<String, dynamic> response) {
+    void setMethodCallResponse(Map<String, dynamic>? response) {
       channel.setMockMethodCallHandler((MethodCall methodCall) {
         log.add(methodCall);
         return new Future.value(response);
@@ -59,7 +59,7 @@ void main() {
     });
 
     test('can not call constructor with null or empty key or secret', () {
-      expect(() => new TwitterLogin(consumerKey: null, consumerSecret: null),
+      expect(() => new TwitterLogin(consumerKey: "", consumerSecret: ""),
           throwsA(anything));
       expect(() => new TwitterLogin(consumerKey: '', consumerSecret: ''),
           throwsA(anything));

@@ -15,10 +15,9 @@ class TwitterLogin {
   /// apps site at https://apps.twitter.com/, in the "Keys and Access Tokens"
   /// tab.
   TwitterLogin({
-    @required this.consumerKey,
-    @required this.consumerSecret,
-  })
-      : assert(consumerKey != null && consumerKey.isNotEmpty,
+    required this.consumerKey,
+    required this.consumerSecret,
+  })   : assert(consumerKey != null && consumerKey.isNotEmpty,
             'Consumer key may not be null or empty.'),
         assert(consumerSecret != null && consumerSecret.isNotEmpty,
             'Consumer secret may not be null or empty.'),
@@ -59,7 +58,7 @@ class TwitterLogin {
         await channel.invokeMethod('getCurrentSession', _keys);
 
     if (session == null) {
-      return null;
+      return TwitterSession();
     }
 
     return new TwitterSession.fromMap(session.cast<String, dynamic>());
