@@ -53,14 +53,9 @@ class TwitterLogin {
   /// ```
   ///
   /// If the user is not logged in, this returns null.
-  Future<TwitterSession?> get currentSession async {
-    final Map<dynamic, dynamic>? session =
+  Future<TwitterSession> get currentSession async {
+    final Map<dynamic, dynamic> session =
         await channel.invokeMethod('getCurrentSession', _keys);
-
-    if (session == null) {
-      return null;
-    }
-
     return new TwitterSession.fromMap(session.cast<String, dynamic>());
   }
 
