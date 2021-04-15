@@ -59,7 +59,7 @@
       "name": "flutter_twitter_login",
       "rootUri": "../../",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.12"
     },
     {
       "name": "matcher",
@@ -140,7 +140,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-04-15T21:26:13.592417Z",
+  "generated": "2021-04-15T21:27:27.825253Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }

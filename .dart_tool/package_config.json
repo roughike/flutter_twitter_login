@@ -131,10 +131,10 @@
       "name": "flutter_twitter_login",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-04-15T21:26:10.352135Z",
+  "generated": "2021-04-15T21:27:26.841752Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }

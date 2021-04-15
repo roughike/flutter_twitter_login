@@ -33,9 +33,9 @@ void main() {
     };
 
     final List<MethodCall> log = [];
-    TwitterLogin sut;
+    late TwitterLogin sut;
 
-    void setMethodCallResponse(Map<String, dynamic> response) {
+    void setMethodCallResponse(Map<String, dynamic>? response) {
       channel.setMockMethodCallHandler((MethodCall methodCall) {
         log.add(methodCall);
         return new Future.value(response);
@@ -95,7 +95,7 @@ void main() {
     test('get currentSession - handles null response gracefully', () async {
       setMethodCallResponse(null);
 
-      final TwitterSession session = await sut.currentSession;
+      final TwitterSession? session = await sut.currentSession;
       expect(session, isNull);
       expect(log, [
         isMethodCall(
@@ -108,7 +108,7 @@ void main() {
     test('get currentSession - parses session correctly', () async {
       setMethodCallResponse(kSessionMap);
 
-      final TwitterSession session = await sut.currentSession;
+      final TwitterSession session = await (sut.currentSession as FutureOr<TwitterSession>);
       expectSessionParsedCorrectly(session);
       expect(log, [
         isMethodCall(
@@ -137,7 +137,7 @@ void main() {
       final TwitterLoginResult result = await sut.authorize();
 
       expect(result.status, TwitterLoginStatus.loggedIn);
-      expectSessionParsedCorrectly(result.session);
+      expectSessionParsedCorrectly(result.session!);
     });
 
     test('authorize - cancelled by user', () async {
