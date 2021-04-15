@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 import 'package:flutter/services.dart';
 
 /// A Flutter plugin for authenticating users by using the native Twitter
@@ -145,7 +144,6 @@ class TwitterLoginResult {
             map?['errorMessage'] != null ? map!['errorMessage'] : null;
 
   static TwitterLoginStatus _parseStatus(String? status, String? errorMessage) {
-
     switch (status) {
       case 'loggedIn':
         return TwitterLoginStatus.loggedIn;
