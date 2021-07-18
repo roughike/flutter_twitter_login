@@ -1,3 +1,7 @@
+# flutter_twitter_login library is no longer supported by the owner. If you are getting  "#import <TwitterKit/TwitterKit.h> not found error"  check out the change i made or use "tw_login: ^1.1.4". This is the same package with fix. 
+
+
+
 # flutter_twitter_login
 
 [![pub package](https://img.shields.io/pub/v/flutter_twitter_login.svg)](https://pub.dartlang.org/packages/flutter_twitter_login)
