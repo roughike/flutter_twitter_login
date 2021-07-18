@@ -14,8 +14,11 @@ dev_dependencies:
 
 flutter:
   plugin:
-    androidPackage: com.roughike.fluttertwitterlogin.fluttertwitterlogin
-    pluginClass: TwitterLoginPlugin
+    platforms:
+      android:
+        package: com.roughike.fluttertwitterlogin.fluttertwitterlogin
+        pluginClass: TwitterLoginPlugin
 
 environment:
-  sdk: ">=2.0.0-dev.28.0 <3.0.0"
+  sdk: ">=2.0.0 <3.0.0"
+  flutter: ">=1.10.0"
