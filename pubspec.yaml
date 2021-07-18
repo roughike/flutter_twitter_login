@@ -1,6 +1,6 @@
 name: flutter_twitter_login
-description: A Flutter plugin for allowing users to authenticate with native Android &amp; iOS Twitter login SDKs.
-version: 1.1.0
+description:  modified  package for  personal usage. This pack  fixes 'TwitterKit/TwitterKit.h' file not found error.
+version: 1.1.1
 author: Iiro Krankka <iiro.krankka@gmail.com>
 homepage: https://github.com/roughike/flutter_twitter_login
 
