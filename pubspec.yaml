@@ -1,7 +1,9 @@
-name: tw_login
-description:  modified  package for  personal usage. This pack  fixes 'TwitterKit/TwitterKit.h' file not found error. I am publishing this version for my own packages.  orginal package is on BSD 2-Clause "Simplified" License.
-version: 1.1.1
-repository: https://github.com/sabreys/flutter_twitter_login
+name: flutter_twitter_login
+description: A Flutter plugin for allowing users to authenticate with native Android &amp; iOS Twitter login SDKs.
+version: 1.1.0
+author: Iiro Krankka <iiro.krankka@gmail.com>
+homepage: https://github.com/roughike/flutter_twitter_login
+
 dependencies:
   flutter:
     sdk: flutter
@@ -10,8 +12,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
-
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.roughike.fluttertwitterlogin.fluttertwitterlogin
+        pluginClass: TwitterLoginPlugin
 
 environment:
   sdk: ">=2.0.0 <3.0.0"
+  flutter: ">=1.10.0"
