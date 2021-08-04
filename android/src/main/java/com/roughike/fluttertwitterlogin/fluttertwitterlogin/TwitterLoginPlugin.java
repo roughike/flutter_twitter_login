@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 
+import androidx.annotation.NonNull;
+
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -45,7 +47,7 @@ public class TwitterLoginPlugin extends Callback<TwitterSession> implements Meth
     }
 
     @Override
-    public void onMethodCall(MethodCall call, Result result) {
+    public void onMethodCall(MethodCall call,@NonNull Result result) {
         switch (call.method) {
             case METHOD_GET_CURRENT_SESSION:
                 getCurrentSession(result, call);
@@ -62,7 +64,7 @@ public class TwitterLoginPlugin extends Callback<TwitterSession> implements Meth
         }
     }
 
-    private void setPendingResult(String methodName, MethodChannel.Result result) {
+    private void setPendingResult(@NonNull String methodName, MethodChannel.Result result) {
         if (pendingResult != null) {
             result.error(
                     "TWITTER_LOGIN_IN_PROGRESS",

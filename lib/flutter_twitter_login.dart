@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 /// A Flutter plugin for authenticating users by using the native Twitter
@@ -15,10 +14,9 @@ class TwitterLogin {
   /// apps site at https://apps.twitter.com/, in the "Keys and Access Tokens"
   /// tab.
   TwitterLogin({
-    @required this.consumerKey,
-    @required this.consumerSecret,
-  })
-      : assert(consumerKey != null && consumerKey.isNotEmpty,
+    required this.consumerKey,
+    required this.consumerSecret,
+  })  : assert(consumerKey != null && consumerKey.isNotEmpty,
             'Consumer key may not be null or empty.'),
         assert(consumerSecret != null && consumerSecret.isNotEmpty,
             'Consumer secret may not be null or empty.'),
@@ -27,9 +25,9 @@ class TwitterLogin {
           'consumerSecret': consumerSecret,
         };
 
-  final String consumerKey;
-  final String consumerSecret;
-  final Map<String, String> _keys;
+  final String? consumerKey;
+  final String? consumerSecret;
+  final Map<String, String?> _keys;
 
   /// Returns whether the user is currently logged in or not.
   ///
@@ -54,8 +52,8 @@ class TwitterLogin {
   /// ```
   ///
   /// If the user is not logged in, this returns null.
-  Future<TwitterSession> get currentSession async {
-    final Map<dynamic, dynamic> session =
+  Future<TwitterSession?> get currentSession async {
+    final Map<dynamic, dynamic>? session =
         await channel.invokeMethod('getCurrentSession', _keys);
 
     if (session == null) {
@@ -101,8 +99,8 @@ class TwitterLogin {
   ///
   /// See the [TwitterLoginResult] class for more documentation.
   Future<TwitterLoginResult> authorize() async {
-    final Map<dynamic, dynamic> result =
-        await channel.invokeMethod('authorize', _keys);
+    final Map<dynamic, dynamic> result = await (channel.invokeMethod(
+        'authorize', _keys)) ;
 
     return new TwitterLoginResult._(result.cast<String, dynamic>());
   }
@@ -127,11 +125,11 @@ class TwitterLoginResult {
 
   /// Only available when the [status] equals [TwitterLoginStatus.loggedIn],
   /// otherwise null.
-  final TwitterSession session;
+  final TwitterSession? session;
 
   /// Only available when the [status] equals [TwitterLoginStatus.error]
   /// otherwise null.
-  final String errorMessage;
+  final String? errorMessage;
 
   TwitterLoginResult._(Map<String, dynamic> map)
       : status = _parseStatus(map['status'], map['errorMessage']),
@@ -142,13 +140,13 @@ class TwitterLoginResult {
             : null,
         errorMessage = map['errorMessage'];
 
-  static TwitterLoginStatus _parseStatus(String status, String errorMessage) {
+  static TwitterLoginStatus _parseStatus(String? status, String? errorMessage) {
     switch (status) {
       case 'loggedIn':
         return TwitterLoginStatus.loggedIn;
       case 'error':
         // Kind of a hack, but the only way of determining this.
-        if (errorMessage.contains('canceled') ||
+        if (errorMessage!.contains('canceled') ||
             errorMessage.contains('cancelled')) {
           return TwitterLoginStatus.cancelledByUser;
         }
@@ -181,17 +179,17 @@ enum TwitterLoginStatus {
 /// the [token] and [secret] are needed for making authenticated Twitter API
 /// calls.
 class TwitterSession {
-  final String secret;
-  final String token;
+  final String? secret;
+  final String? token;
 
   /// The user's unique identifier, usually a long series of numbers.
-  final String userId;
+  final String? userId;
 
   /// The user's Twitter handle.
   ///
   /// For example, if you can visit your Twitter profile by typing the URL
   /// http://twitter.com/hello, your Twitter handle (or username) is "hello".
-  final String username;
+  final String? username;
 
   /// Constructs a new access token instance from a [Map].
   ///
@@ -229,3 +227,4 @@ class TwitterSession {
   int get hashCode =>
       secret.hashCode ^ token.hashCode ^ userId.hashCode ^ username.hashCode;
 }
+// // ------import 'package:flutter/material.dart';
