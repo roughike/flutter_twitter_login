@@ -108,7 +108,8 @@ void main() {
     test('get currentSession - parses session correctly', () async {
       setMethodCallResponse(kSessionMap);
 
-      final TwitterSession session = await (sut.currentSession as FutureOr<TwitterSession>);
+      final TwitterSession session =
+          await (sut.currentSession as FutureOr<TwitterSession>);
       expectSessionParsedCorrectly(session);
       expect(log, [
         isMethodCall(

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 /// A Flutter plugin for authenticating users by using the native Twitter
@@ -17,8 +16,7 @@ class TwitterLogin {
   TwitterLogin({
     required this.consumerKey,
     required this.consumerSecret,
-  })
-      : assert(consumerKey != null && consumerKey.isNotEmpty,
+  })  : assert(consumerKey != null && consumerKey.isNotEmpty,
             'Consumer key may not be null or empty.'),
         assert(consumerSecret != null && consumerSecret.isNotEmpty,
             'Consumer secret may not be null or empty.'),
@@ -101,8 +99,8 @@ class TwitterLogin {
   ///
   /// See the [TwitterLoginResult] class for more documentation.
   Future<TwitterLoginResult> authorize() async {
-    final Map<dynamic, dynamic> result =
-        await (channel.invokeMethod('authorize', _keys) as FutureOr<Map<dynamic, dynamic>>);
+    final Map<dynamic, dynamic> result = await (channel.invokeMethod(
+        'authorize', _keys)) ;
 
     return new TwitterLoginResult._(result.cast<String, dynamic>());
   }
@@ -229,3 +227,4 @@ class TwitterSession {
   int get hashCode =>
       secret.hashCode ^ token.hashCode ^ userId.hashCode ^ username.hashCode;
 }
+// // ------import 'package:flutter/material.dart';
